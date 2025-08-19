@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meghana Patil | Data Analyst Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <style>
+    html { scroll-behavior: smooth; 
+         scroll-padding-top: 100px;}
+    .hover-animate:hover { transform: translateY(-5px) scale(1.03); transition: all 0.3s ease; }
+    .btn-hover-effect:hover { background-color: #8E24AA; color: white; transform: scale(1.05); }
+    .bg-theme { background: linear-gradient(to bottom, #f5f3ff, #ffffff); }
+    .hover-reveal-content { position: relative; min-height: 150px; max-height: 150px; overflow: hidden; transition: all 0.5s ease; }
+    .hover-reveal-content:hover { max-height: 450px; }
+    .hidden-content { opacity: 0; max-height: 0; overflow: hidden; transition: opacity 0.5s ease, max-height 0.5s ease; }
+    .hover-reveal-content:hover .hidden-content { opacity: 1; max-height: 400px; margin-top: 1rem; }
+    .section-title { text-transform: uppercase; letter-spacing: 2px; }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body class="bg-theme text-gray-800">
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+    @media (max-width: 768px) {
+   .hidden-content {
+    opacity: 1 !important;
+    max-height: none !important;
+    margin-top: 1rem;
+    }
+    }
+    #mobile-menu {
+    transition: all 0.3s ease;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  #mobile-menu.open {
+    transform: scaleY(1);
+  }
+  </style>
+  
+
+<!-- Responsive Navbar -->
+<header class="fixed top-0 w-full flex justify-between items-center pl-4 pr-2 sm:pl-8 sm:pr-6 py-3 sm:py-4 bg-white shadow-md z-50">
+  <a href="#homeSection" class="text-2xl font-bold text-purple-600">MP</a>
+  <div class="flex justify-end md:hidden w-auto mr-16">
+    <button id="menu-btn" class="text-3xl focus:outline-none">☰</button>
+  </div>
+  <nav id="menu" class="hidden md:flex space-x-6">
+    <a href="#about" class="text-gray-700 hover:text-purple-600">About</a>
+    <a href="#projects" class="text-gray-700 hover:text-purple-600">Projects</a>
+    <a href="#skills" class="text-gray-700 hover:text-purple-600">Skills</a>
+    <a href="#certifications" class="text-gray-700 hover:text-purple-600">Certifications</a>
+    <a href="#education" class="text-gray-700 hover:text-purple-600">Education</a>
+    <a href="#experience" class="text-gray-700 hover:text-purple-600">Experience</a>
+    <a href="#publications" class="text-gray-700 hover:text-purple-600">Publications</a>
+    <a href="#contact" class="text-gray-700 hover:text-purple-600">Contact</a>
+  </nav>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="md:hidden hidden flex-col absolute top-16 right-6 bg-white shadow-md rounded-md overflow-hidden z-50 w-64">
+  <a href="#about" class="block px-6 py-3 text-gray-700 hover:bg-purple-100">About</a>
+  <a href="#projects" class="block px-6 py-3 text-gray-700 hover:bg-purple-100">Projects</a>
+  <a href="#skills" class="block px-6 py-3 text-gray-700 hover:bg-purple-100">Skills</a>
+  <a href="#certifications" class="block px-6 py-3 text-gray-700 hover:bg-purple-100">Certifications</a>
+  <a href="#education" class="block px-6 py-3 text-gray-700 hover:bg-purple-100">Education</a>
+  <a href="#experience" class="block px-6 py-3 text-gray-700 hover:bg-purple-100">Experience</a>
+  <a href="#publications" class="block px-6 py-3 text-gray-700 hover:bg-purple-100">Publications</a>
+  <a href="#contact" class="block px-6 py-3 text-gray-700 hover:bg-purple-100">Contact</a>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  setTimeout(() => {
+    mobileMenu.classList.toggle('open');
+  }, 10);
+  });
+</script>
+
+<!-- Home / Landing -->
+<section id="homeSection" class="min-h-screen flex flex-col justify-center items-center text-center pt-32 transition-all duration-700" data-aos="fade-in">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi! I'm Meghana Patil</h1>
+    <p class="text-lg md:text-2xl mb-8 text-gray-600">A Data Analyst | Business Intelligence Enthusiast | Storyteller</p>
+    <div class="space-x-4">
+      <a href="#contact" class="btn-hover-effect border px-6 py-3 rounded-full">Let's Connect</a>
+      <a href="https://drive.google.com/file/d/1FQK43mYbniFwJ_kqiApzeaDEiZFlQOH8/view" target="_blank" class="btn-hover-effect border px-6 py-3 rounded-full">Download CV</a>
+    </div>
+  </section>
+  <script>
+    window.addEventListener('scroll', function() {
+      const homeSection = document.getElementById('homeSection');
+      if (window.scrollY > 50) {
+        homeSection.classList.remove('min-h-screen');
+        homeSection.classList.add('min-h-[65vh]', 'pt-20', 'pb-10'); 
+      } else {
+        homeSection.classList.remove('min-h-[65vh]', 'pt-20');
+        homeSection.classList.add('min-h-screen');
+      }
+    });
+  </script>
+  
+<!-- About Me Section -->
+<section id="about" class="py-20 px-4 sm:px-6 md:px-8" data-aos="fade-up">
+  <div class="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl font-bold mb-6 text-purple-600 section-title">About Me</h2>
+      <p class="text-gray-700 leading-relaxed">
+          Hi, I’m Meghana Patil, a data-driven problem solver passionate about uncovering insights from raw data. 
+          With a Master’s in Computer Science from the University of Texas at Arlington and multiple Google certifications in Data Analytics, Advanced Analytics, and Business Intelligence, 
+          I specialize in turning data into actionable insights.<br><br>
+          I have hands-on experience in SQL, Python, R, Tableau, Power BI, and Machine Learning, allowing me to analyze complex datasets, build predictive models, and create interactive dashboards. 
+          I thrive on solving business challenges with data storytelling, automation, and visualization techniques to drive meaningful decisions.
+        </p>
+        <div class="flex space-x-6 mt-6">
+          <a href="https://www.linkedin.com/in/meghanapatil99/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="h-10 hover-animate">
+          </a>
+          <a href="https://github.com/meghanap29" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="h-10 hover-animate">
+          </a>
+          <a href="https://public.tableau.com/app/profile/meghana.patil2249/vizzes" target="_blank">
+            <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg" alt="Tableau" class="h-10 hover-animate">
+          </a>
+        </div>
+      </div>
+      <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+        <img src="https://i.imgur.com/UrtUq40.png" alt="Meghana Patil" class="rounded-full w-80 mx-auto">
+      </div>
+    </div>
+  </section>
+<!-- Projects Section -->
+<section id="projects" class="py-20 px-4 sm:px-6 md:px-8" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center text-purple-600 mb-10 section-title">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+  
+      <!-- Project 1 -->
+      <a href="https://github.com/meghanap29/Book-Store-Franchise-Management" target="_blank" class="block card-hover rounded-lg overflow-hidden shadow-md bg-white ">
+        <div class="relative w-full h-48 overflow-hidden">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdcrzzf_ZNkpZ6AdCg9dh0aTIE1Phqy48Qqw&s" alt="Default" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 hover:opacity-0">
+          <img src="https://i.imgur.com/UxiKchO.png" alt="Hover" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 hover:opacity-100">
+        </div>
+        <div class="p-4 min-h-40 flex flex-col justify-between">
+          <h3 class="text-lg font-bold text-purple-700">Book Store Book-Store-Franchise-Management</h3>
+          <p class="text-sm text-gray-600 mt-2 ">Designed and implemented a system to manage bookstore franchise inventory, sales, and performance using Python and SQL, improving operational visibility and data tracking.</p>
+        </div>
+      </a>
+  
+      <!-- Project 2 -->
+      <a href="https://github.com/meghanap29/Texas-Airbnb" target="_blank" class="block card-hover rounded-lg overflow-hidden shadow-md bg-white">
+        <div class="relative w-full h-48 overflow-hidden">
+          <img src="https://news.airbnb.com/wp-content/uploads/sites/4/2020/08/Airbnb_Logo_Over_Gradient-1.png?fit=2400%2C1600" alt="Default" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 hover:opacity-0">
+          <img src="https://i.imgur.com/Jj2cX2i.png" alt="Hover" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 hover:opacity-100">
+        </div>
+        <div class="p-4 min-h-40 flex flex-col justify-between">
+          <h3 class="text-lg font-bold text-purple-700">Texas Airbnb - Pricing Trends and Prediction</h3>
+          <p class="text-sm text-gray-600 mt-2">Performed exploratory data analysis on Texas Airbnb datasets to uncover pricing trends, occupancy rates, and customer preferences. Visualized insights using Tableau and built predictive models to forecast rental prices using Python.</p>
+        </div>
+      </a>
+  
+      <!-- Project 3 -->
+      <a href="https://github.com/meghanap29/Texas-Airbnb" target="_blank" class="block card-hover rounded-lg overflow-hidden shadow-md bg-white">
+        <div class="relative w-full h-48 overflow-hidden">
+          <img src="http://gudphoto.com/bikenyc/wp-content/uploads/2012/04/20120418-DSCF0792.jpg" alt="Default" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 hover:opacity-0">
+          <img src="https://i.imgur.com/9PHijmJ.png" alt="Hover" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 hover:opacity-100">
+        </div>
+        <div class="p-4 min-h-40 flex flex-col justify-between">
+          <h3 class="text-lg font-bold text-purple-700">London Bikes - Time-Based Trend Analysis</h3>
+          <p class="text-sm text-gray-600 mt-2">Analyzed London bike rides dataset to uncover how weather conditions and time factors affect rental patterns. Built dynamic Tableau dashboards to visualize usage trends across temperature, seasons, and time of day.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+<!-- Skills Section -->
+<section id="skills" class="py-20 px-4 sm:px-6 md:px-8" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center text-purple-600 mb-10 section-title">Skills</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+  
+      <!-- Programming Languages -->
+      <div class="p-6 bg-white rounded-lg shadow-md card-hover text-center">
+        <h3 class="text-xl font-bold text-purple-700 mb-4">Programming Languages</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Python (Pandas, NumPy, Scikit-learn), R, SQL, C/C++, Java, JavaScript
+        </p>
+      </div>
+  
+      <!-- Databases & Cloud -->
+      <div class="p-6 bg-white rounded-lg shadow-md card-hover text-center">
+        <h3 class="text-xl font-bold text-purple-700 mb-4">Databases & Cloud</h3>
+        <p class="text-gray-700 leading-relaxed">
+          MySQL, SQL Server, Oracle, Firebase, AWS (S3, Redshift), Google BigQuery
+        </p>
+      </div>
+  
+      <!-- Data Visualization & Reporting -->
+      <div class="p-6 bg-white rounded-lg shadow-md card-hover text-center">
+        <h3 class="text-xl font-bold text-purple-700 mb-4">Data Visualization & Reporting</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Tableau, Power BI, Looker Studio, Excel (PivotTables, VLOOKUP, Macros)
+        </p>
+      </div>
+  
+      <!-- Data Analytics & Tools -->
+      <div class="p-6 bg-white rounded-lg shadow-md card-hover text-center">
+        <h3 class="text-xl font-bold text-purple-700 mb-4">Data Analytics & Tools</h3>
+        <p class="text-gray-700 leading-relaxed">
+          ETL Pipelines, A/B Testing, Statistical Modelling, Predictive Analytics
+        </p>
+      </div>
+  
+      <!-- Machine Learning -->
+      <div class="p-6 bg-white rounded-lg shadow-md card-hover text-center">
+        <h3 class="text-xl font-bold text-purple-700 mb-4">Machine Learning</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Regression, Classification, Clustering, XGBoost, Random Forest, PCA
+        </p>
+      </div>
+  
+      <!-- Tools & Platforms -->
+      <div class="p-6 bg-white rounded-lg shadow-md card-hover text-center">
+        <h3 class="text-xl font-bold text-purple-700 mb-4">Tools & Platforms</h3>
+        <p class="text-gray-700 leading-relaxed">
+          GitHub, Jupyter Notebook, Linux, Google Analytics, Snowflake
+        </p>
+      </div>
+  
+    </div>
+  </section>
+  <section id="certifications" class="py-20 px-6 bg-gray-50" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center text-purple-600 mb-10 section-title">Certifications</h2>
+  
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-8 max-w-6xl mx-auto text-lg text-gray-700">
+  
+      <li class="flex items-center space-x-3 whitespace-nowrap">
+        <i class="fas fa-check-circle text-purple-600"></i>
+        <span>Google Data Analytics Professional Certificate</span>
+      </li>
+  
+      <li class="flex items-center space-x-3 whitespace-nowrap">
+        <i class="fas fa-check-circle text-purple-600"></i>
+        <span>Google Advanced Data Analytics Professional Certificate</span>
+      </li>
+  
+      <li class="flex items-center space-x-3 whitespace-nowrap">
+        <i class="fas fa-check-circle text-purple-600"></i>
+        <span>Google Business Intelligence Professional Certificate</span>
+      </li>
+      
+      <li class="flex items-center space-x-3 whitespace-nowrap">
+        <i class="fas fa-check-circle text-purple-600"></i>
+        <span>Microsoft Data Visualization Professional Certificate</span>
+      </li>
+
+      <li class="flex items-center space-x-3 whitespace-nowrap">
+        <i class="fas fa-check-circle text-purple-600"></i>
+        <span>Microsoft Excel Professional Certificate</span>
+      </li>
+      
+      <li class="flex items-center space-x-3 whitespace-nowrap">
+        <i class="fas fa-check-circle text-purple-600"></i>
+        <span>Data Analysis with Python (IBM)</span>
+      </li>
+  
+      <li class="flex items-center space-x-3 whitespace-nowrap">
+        <i class="fas fa-check-circle text-purple-600"></i>
+        <!--<a href="https://www.credly.com/badges/d0fa3e7d-dfb5-4f68-88cc-b718ceca891d/linked_in_profile" target="_blank" class="text-purple-700 hover:underline">
+          Python for Data Science (IBM) </a>-->
+          <span>Python for Data Science (IBM)</span>
+      </li>
+  
+  
+    </ul>
+  </section>
+  
+
+<!-- Education Section -->
+<section id="education" class="py-20 px-4 sm:px-6 md:px-8" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center text-purple-600 mb-10 section-title">Education</h2>
+  
+    <div class="flex flex-col max-w-6xl mx-auto space-y-12 relative">
+  
+      <!-- Vertical line in center -->
+      <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-purple-300"></div>
+  
+      <!-- Education Item 1 -->
+      <div class="flex flex-col md:flex-row md:items-center">
+        <div class="md:w-1/2 md:pr-10 text-right">
+          <h3 class="text-xl font-bold text-purple-700">University of Texas at Arlington</h3>
+          <p class="text-gray-600 mt-2">Aug 2023 - May 2025</p>
+          <p class="mt-4 text-gray-700 leading-relaxed">
+            Master of Science, Computer Science<br>
+            GPA: 3.7<br>
+            Coursework: Database Systems, Data Analysis and Modelling Techniques, Data Mining, Cloud Computing and Big Data
+          </p>
+        </div>
+        <div class="hidden md:block w-10 h-10 bg-purple-600 rounded-full mx-auto"></div>
+        <div class="md:w-1/2"></div>
+      </div>
+  
+      <!-- Education Item 2 -->
+      <div class="flex flex-col md:flex-row md:items-center">
+        <div class="md:w-1/2"></div>
+        <div class="hidden md:block w-10 h-10 bg-purple-600 rounded-full mx-auto"></div>
+        <div class="md:w-1/2 md:pl-10">
+          <h3 class="text-xl font-bold text-purple-700">University of Pune</h3>
+          <p class="text-gray-600 mt-2">Aug 2018 - May 2022</p>
+          <p class="mt-4 text-gray-700 leading-relaxed">
+            Bachelor of Technology, Computer Engineering<br>
+            GPA: 3.8<br>
+            Coursework: Business Intelligence and Data Analytics, DBMS, Data Science, Data Structures, Machine Learning
+          </p>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+<!-- Experience Section -->
+<section id="experience" class="py-20 px-4 sm:px-6 md:px-8" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center text-purple-600 mb-10 section-title">Experience</h2>
+    <div class="flex flex-col space-y-8 max-w-6xl mx-auto px-6">
+  
+      <!-- Experience 1 -->
+      <div class="bg-white rounded-lg shadow-md p-6 hover-reveal-content card-hover">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-bold text-purple-700">Data Analyst - Socio Maven Media</h3>
+          <span class="text-gray-500 text-sm">Dec 2022 - Jul 2023 | India</span>
+        </div>
+        <div class="hidden-content">
+          <ul class="list-disc list-inside mt-4 text-gray-700 space-y-2">
+            <li>Conducted data cleaning, transformation, and analysis using Python (Pandas, NumPy) and SQL to drive business decisions and <b>optimize marketing strategies.</b></li>
+            <li>Created interactive Tableau and Power BI dashboards to <b>track KPIs</b>, marketing performance, and sales trends.</li>
+            <li>Conducted A/B tests on marketing campaigns, leading to a <b>20% improvement</b> in ad engagement and conversions.</li>
+            <li>Built forecasting models to predict sales trends and customer behavior, improving business planning.</li>
+            <li>Automated data reporting workflows using Python, reducing manual effort by <b>40% and increasing efficiency</b>.</li>
+            <li>Collaborated closely with marketing and product teams to translate data insights into actionable strategies.</li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Experience 2 -->
+      <div class="bg-white rounded-lg shadow-md p-6 hover-reveal-content card-hover">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-bold text-purple-700">Data Analyst Intern - edu plus now</h3>
+          <span class="text-gray-500 text-sm">Aug 2021 - Mar 2022 | India</span>
+        </div>
+        <div class="hidden-content">
+          <ul class="list-disc list-inside mt-4 text-gray-700 space-y-2">
+            <li>Optimized student progress tracking by 35% through SQL-based reporting dashboards, enabling real-time project milestone monitoring.</li>
+            <li><b>Enhanced feedback efficiency by 40%</b> by designing Python-based analytics models for student performance assessment.</li>
+            <li>Automated project tracking for <b>2,000+ students</b> by integrating Power BI data pipelines.</li>
+            <li>Reduced manual reporting efforts by 50% with centralized database systems for student performance tracking.</li>
+          </ul>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+<!-- Publications Section -->
+<section id="publications" class="py-20 px-4 sm:px-6 md:px-8" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center text-purple-600 mb-10 section-title">Publications</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+  
+      <!-- Publication 1 -->
+      <a target="_blank" class="block card-hover rounded-lg overflow-hidden shadow-md bg-white p-6 text-center">
+        <img src="https://www.ijaresm.com/assets/designer/themes/default/images/logo.jpg" alt="IJARESM Logo" class="h-20 mx-auto mb-4">
+        <h3 class="text-lg font-bold text-purple-700 mb-2">INDIAN COIN CURRENCY RECOGNITION USING MACHINE LEARNING</h3>
+        <p class="text-gray-600 text-sm">Published in IJARESM | June 6, 2022</p>
+      </a>
+  
+      <!-- Publication 2 -->
+      <a href="https://data.mendeley.com/datasets/k49x47v732/1" target="_blank" class="block card-hover rounded-lg overflow-hidden shadow-md bg-white p-6 text-center">
+        <img src="https://cdn.freebiesupply.com/logos/large/2x/mendeley-logo-png-transparent.png" alt="Mendeley Logo" class="h-20 mx-auto mb-4">
+        <h3 class="text-lg font-bold text-purple-700 mb-2">INDIAN COIN CURRENCY DATASET - Mendeley</h3>
+        <p class="text-gray-600 text-sm">Published in Mendeley | May 9, 2022</p>
+      </a>
+  
+      <!-- Publication 3 -->
+      <a href="https://ieee-dataport.org/documents/indian-coin-currency-dataset" target="_blank" class="block card-hover rounded-lg overflow-hidden shadow-md bg-white p-6 text-center">
+        <img src="https://ieee-dataport.org/sites/all/themes/dataport/images/dataport-logo.svg" alt="IEEE DataPort Logo" class="h-20 mx-auto mb-4">
+        <h3 class="text-lg font-bold text-purple-700 mb-2">INDIAN COIN CURRENCY DATASET - IEEE Dataport</h3>
+        <p class="text-gray-600 text-sm">Published in IEEE DataPort | May 7, 2022</p>
+      </a>
+  
+    </div>
+  </section>
+<!-- Contact Section -->
+<section id="contact" class="py-20 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-purple-50 to-white " data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center text-purple-600 mb-10 section-title">Let's Connect!</h2>
+    <div class="max-w-3xl mx-auto text-center space-y-6">
+      <p class="text-lg text-gray-700 leading-relaxed">
+        I’m actively seeking Data Analyst roles where I can apply my skills in data storytelling, machine learning, and business intelligence to solve real-world problems.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Let’s turn data into decisions!
+      </p>
+      <div class="flex justify-center space-x-6">
+        <a href="mailto:meghanajpatil99@gmail.com" class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full transition card-hover">Email Me</a>
+        <a href="https://www.linkedin.com/in/meghanapatil99/" target="_blank" class="inline-block border-2 border-purple-600 hover:bg-purple-600 hover:text-white text-purple-600 px-6 py-3 rounded-full transition card-hover">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="py-6 text-center text-gray-500 text-sm">
+    © 2025 Meghana Patil. All rights reserved.
+  </footer>
+  
+
+<!-- AOS Initialization -->
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>
